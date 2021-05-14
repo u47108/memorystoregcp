@@ -1,0 +1,58 @@
+*.java.hsp
+*.sonarj
+*.sw*
+.DS_Store
+bin
+build.sh
+integration-repo
+ivy-cache
+jxl.log
+jmx.log
+derby.log
+spring-test/test-output/
+.gradle
+argfile*
+pom.xml
+activemq-data/
+
+classes/
+/build
+buildSrc/build
+/spring-*/build
+/src/asciidoc/build
+target/
+
+# Eclipse artifacts, including WTP generated manifests
+spring-*/src/main/java/META-INF/MANIFEST.MF
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+.idea
+out
+test-output
+atlassian-ide-plugin.xml
+.gradletasknamecache
+
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# evitar copiar las credenciales del service account
+/src/main/resources/credentials.p12
