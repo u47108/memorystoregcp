@@ -19,6 +19,7 @@ public class UserDaoImpl implements UserDao {
     RedisTemplate redisTemplate;
 
     private static final String KEY = "user";
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(UserDaoImpl.class);
 
@@ -29,10 +30,9 @@ public class UserDaoImpl implements UserDao {
         }
         
         try {
-            Map userHash = new ObjectMapper().convertValue(user, Map.class);
+            Map userHash = OBJECT_MAPPER.convertValue(user, Map.class);
             redisTemplate.opsForHash().put(KEY, user.getName(), userHash);
             return true;
-
         } catch (Exception e) {
             logger.error("Error saving user: {}", user.getName(), e);
             return false;
@@ -52,7 +52,7 @@ public class UserDaoImpl implements UserDao {
                 return null;
             }
             
-            return new ObjectMapper().convertValue(userMap, User.class);
+            return OBJECT_MAPPER.convertValue(userMap, User.class);
         } catch (Exception e) {
             logger.error("Error finding user by name: {}", name, e);
             return null;

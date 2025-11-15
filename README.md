@@ -1,6 +1,6 @@
 # Memory Store GCP (Redis Service)
 
-Servicio que utiliza Redis (Memorystore) en Google Cloud Platform para caché y almacenamiento de datos en memoria con Spring Boot 3.3.0 y WebFlux.
+Servicio que utiliza Redis (Memorystore) en Google Cloud Platform para caché y almacenamiento de datos en memoria con Spring Boot 3.5.7 y WebFlux.
 
 ## 📋 Descripción
 
@@ -13,7 +13,7 @@ Este servicio demuestra el uso de Redis/Memorystore en GCP con Spring Boot para 
 - ✅ Spring Data Redis Reactive
 - ✅ WebFlux para operaciones reactivas
 - ✅ API REST documentada
-- ✅ Spring Boot 3.3.0 con Java 21
+- ✅ Spring Boot 3.5.7 con Java 21
 - ✅ Health check endpoints
 
 ## 📋 Requisitos

@@ -18,10 +18,10 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @EnableRedisRepositories
 public class BebigqueryApplication {
 
-  @Value("spring.redis.host")
+  @Value("${spring.data.redis.host:localhost}")
   String hostName;
-  @Value("spring.redis.port")
-  String port;
+  @Value("${spring.data.redis.port:6379}")
+  int port;
 
   public static void main(String[] args) {
     SpringApplication.run(BebigqueryApplication.class, args);
@@ -29,10 +29,8 @@ public class BebigqueryApplication {
 
   @Bean
   public LettuceConnectionFactory redisConnectionFactory() {
-
-    RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(hostName, 6379);
+    RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(hostName, port);
     return new LettuceConnectionFactory(redisStandaloneConfiguration);
-
   }
 
   @Bean
